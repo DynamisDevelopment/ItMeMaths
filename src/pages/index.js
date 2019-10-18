@@ -1,11 +1,26 @@
 import React from "react"
-import '../styles/styles.sass'
+import '../styles.sass'
 
-const Layout = () => {
+// * State 
+import Provider, { myContext } from '../components/provider'
+
+// * Components 
+import Layout from '../components/layout'
+
+const Home = () => {
     return (
-        <div>
-            <h1>ItMeMaths.com</h1>
-        </div>
+        <Provider>
+            <Layout>
+                <myContext.Consumer>
+                    {context => (
+                        <React.Fragment>
+                            <h1>{context.state.toString()}</h1>
+                            <button onClick={context.changeTheme}>Change</button>
+                        </React.Fragment>
+                    )}
+                </myContext.Consumer>
+            </Layout>
+        </Provider>
     )
 }
-export default Layout
+export default Home
