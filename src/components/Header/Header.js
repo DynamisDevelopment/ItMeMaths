@@ -1,11 +1,21 @@
 import React from 'react'
 import './Header.sass'
 
-const Header = () => {
+const Header = ({context}) => {
     return (
         <div className='header'>
-            <h1>ItMeMaths</h1>
-
+            <nav>
+                <h1 className='title'>ItMeMath</h1>
+                <div className="spacer">
+                    <label> Change to {context.state ? 'light' : 'dark' }
+                        <input type="checkbox" onClick={context.changeTheme}/>
+                    </label>
+                </div>
+                <div>
+                    <input type="text" className="searchBar"/>
+                    <div className="burger"></div>
+                </div>
+            </nav>
         </div>
     )
 }

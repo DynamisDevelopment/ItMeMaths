@@ -1,4 +1,34 @@
 @import "../../styles.sass"
 
-.head 
-    color: red
+nav 
+    // Layout
+    display: flex 
+    justify-content: space-between 
+    align-items: center
+
+    h1, div, img
+        // Layout
+        display: flex 
+        justify-content: center
+        align-items: center
+        height: 125px
+        padding: 0 40px 0 40px
+
+        // Misc Styling
+        border: 1px solid rgba(255, 255, 255, .2)
+    .title 
+        // Typography
+        color: $main-color
+        font-weight: bold
+        @extend .text-2xl
+        @extend .tracking-widest
+    .spacer 
+        // Layout
+        width: 100%
+    .searchBar 
+        // Layout
+        margin: 0 80px 0 40px
+    .burger 
+        // Layout
+        width: 50px
+        height: 50px

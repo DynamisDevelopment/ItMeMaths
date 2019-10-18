@@ -11,14 +11,6 @@ const Home = () => {
     return (
         <Provider>
             <Layout>
-                <myContext.Consumer>
-                    {context => (
-                        <React.Fragment>
-                            <h1>{context.state.toString()}</h1>
-                            <button onClick={context.changeTheme}>Change</button>
-                        </React.Fragment>
-                    )}
-                </myContext.Consumer>
             </Layout>
         </Provider>
     )

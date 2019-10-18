@@ -1,13 +1,23 @@
 import React from 'react'
 import Header from './Header/Header'
 
-const Layout = props => {
+// * State 
+import Provider, { myContext } from './provider'
 
+const Layout = props => {
     return (
-        <div>
-            <Header />
-            {props.children}
-        </div>
+        <Provider>
+            <myContext.Consumer>
+                {context => (
+                    <React.Fragment>
+                        <div className={context.state ? 'darkTheme' : 'lightTheme'}>
+                            <Header context={context} />
+                            {props.children}
+                        </div>
+                    </React.Fragment>
+                )}
+            </myContext.Consumer>
+        </Provider>
     )
 }
 
