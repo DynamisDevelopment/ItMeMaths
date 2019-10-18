@@ -5210,6 +5210,11 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
+headwindcss@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/headwindcss/-/headwindcss-1.0.1.tgz#46f36e591fcc64f48e74eac581517725314bd5e6"
+  integrity sha512-+tVb0q+yTIWK1Ez/3l65s1LR2IXp2zQPybnpqGUiS9QDMi220IV3O6pVOdgE5rtZeQOwekegtl8OWXjq4SAx2Q==
+
 hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
@@ -6623,11 +6628,6 @@ map-visit@^1.0.0:
   integrity sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
   dependencies:
     object-visit "^1.0.0"
-
-materialize-css@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/materialize-css/-/materialize-css-1.0.0.tgz#8d5db1c4a81c6d65f3b2e2ca83a8e08daa24d1be"
-  integrity sha512-4/oecXl8y/1i8RDZvyvwAICyqwNoKU4or5uf8uoAd74k76KzZ0Llym4zhJ5lLNUskcqjO0AuMcvNyDkpz8Z6zw==
 
 md5-file@^3.2.3:
   version "3.2.3"

@@ -1,11 +1,11 @@
 import React from "react"
-import Styles from '../styles/styles.sass'
+import '../styles/styles.sass'
 
 const Layout = () => {
     return (
         <div>
-
+            <h1>ItMeMaths.com</h1>
         </div>
     )
 }
-export default () => Layout
+export default Layout
