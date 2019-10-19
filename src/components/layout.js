@@ -2,11 +2,11 @@ import React from 'react'
 import Header from './Header/Header'
 
 // * State 
-import Provider, { myContext } from './provider'
+import { myContext } from '../../wrap-with-provider'
 
 const Layout = props => {
     return (
-        <Provider>
+        <div>
             <myContext.Consumer>
                 {context => (
                     <React.Fragment>
@@ -17,7 +17,7 @@ const Layout = props => {
                     </React.Fragment>
                 )}
             </myContext.Consumer>
-        </Provider>
+        </div>
     )
 }
 

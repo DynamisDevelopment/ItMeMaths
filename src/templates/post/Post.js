@@ -1,10 +1,15 @@
 import React from 'react'
 import './Post.sass'
 
+// * Components 
+import Layout from '../../components/layout'
+
 const Post = () => {
     return (
         <div>
-            <h1>Howdy</h1>
+            <Layout>
+                <h1>Howdy</h1>
+            </Layout>
         </div>
     )
 }
