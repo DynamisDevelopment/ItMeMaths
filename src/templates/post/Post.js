@@ -61,7 +61,7 @@ const Post = props => {
                     <GraphImg image={slider.image} withWebp={true} fit={'clip'} className='banner post-banner' />
                 </div>
                 <div className="post-content">
-                    <div dangerouslySetInnerHTML={renderContent()} />
+                    <div dangerouslySetInnerHTML={renderContent()} className='container' />
                 </div>
             </Layout>
         </div>

@@ -1,18 +1,19 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import './Header.sass'
 
 const Header = ({ context }) => {
     return (
-        <div className='header'>
+        <header className='header'>
             <nav>
-                <a href="/"><h1 className='title'>ItMeMaths</h1></a>
+                <Link to='/'><h1 className='title'>ItMeMaths</h1></Link>
                 <div className="spacer"></div>
                 <div>
                     <input type="text" className="searchBar" />
                     <div className="burger">Burger</div>
                 </div>
             </nav>
-        </div>
+        </header>
     )
 }
 export default Header

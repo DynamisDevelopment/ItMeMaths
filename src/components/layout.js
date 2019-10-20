@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './Header/Header'
+import Footer from './Footer/Footer'
 
 // * State 
 import { myContext } from '../../wrap-with-provider'
@@ -13,6 +14,7 @@ const Layout = props => {
                         <div className={context.state ? 'darkTheme' : 'lightTheme'}>
                             <Header context={context} />
                             {props.children}
+                            <Footer />
                         </div>
                     </React.Fragment>
                 )}

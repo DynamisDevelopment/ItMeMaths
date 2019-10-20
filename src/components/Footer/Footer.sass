@@ -1,0 +1,41 @@
+@import "../../styles.sass"
+
+footer 
+    // Layout
+    margin-top: 40px
+    .section
+        // Layout
+        @extend .sm-px-4 
+
+        // Typography
+        @extend .text-lg
+        h1 
+            // Typography
+            font-weight: bold
+        .footer-row 
+            // Layout
+            width: 100vw
+            display: flex
+            align-items: center
+
+            // Typography
+            @extend .text-base
+            p 
+                // Layout
+                @extend .sm-px-10
+        .about-row 
+            // Layout
+            justify-content: space-between
+            @extend .footer-row 
+            .profile-picture 
+                // Layout
+                margin-left: 5px
+                width: 75px
+                height: 75px
+        .details-row 
+            // Layout
+            @extend .footer-row
+        .copyright 
+            // Layout
+            justify-content: center
+            @extend .footer-row

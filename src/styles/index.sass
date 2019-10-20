@@ -4,6 +4,32 @@
     // Layout
     height: 60vh
 
+.banner-content-front 
+    // Layout
+    width: 100vw
+    height: 60vh
+    position: absolute
+    display: flex 
+    justify-content: center
+    align-items: center 
+    z-index: 2
+    @extend .sm-flex-col
+    @extend .sm-mt-8
+
+    // Typography
+    @extend .sm-text-center
+    .title 
+        // Typography
+        font-weight: bold
+        @extend .text-4xl
+    .desc 
+        // Layout
+        @extend .container
+        @extend .sm-px-4, .md-px-12, .lg-px-32
+        
+        // Typography
+        @extend .sm-text-base, .md-text-lg
+
 .card 
     // Layout
     margin-top: 20px
