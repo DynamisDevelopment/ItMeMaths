@@ -13,6 +13,7 @@ const Layout = props => {
                         <div className={context.state ? 'darkTheme' : 'lightTheme'}>
                             <Header context={context} />
                             {props.children}
+                            <a href="/posts/rational-exponents">POST</a>
                         </div>
                     </React.Fragment>
                 )}

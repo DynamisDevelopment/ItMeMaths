@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const myContext = React.createContext()
 
-const PROVIDER = props => {
+const Provider = props => {
   const [isDark, setTheme] = useState(false)
 
   return (
@@ -16,7 +16,7 @@ const PROVIDER = props => {
 }
 
 export default ({ element }) => (
-  <PROVIDER>
+  <Provider>
     {element}
-  </PROVIDER>
+  </Provider>
 )

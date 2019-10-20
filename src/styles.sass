@@ -2,11 +2,51 @@
 
 $main-color: #ED694F
 
-.darkTheme 
-    background-color: #191B1C 
-    color: #fff
+body 
+    overflow-x: hidden 
 
 .lightTheme 
-    background-color: #fff 
-    color: black
+    background-color: #fff
+    color: #fff 
+
+.slide 
+    .banner 
+        // Layout
+        height: 60vh
+        z-index: 1
+        &:before 
+            // Layout
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            background: rgba(0, 0, 0, .3)
+            z-index: 2
+    .content 
+        // Layout
+        width: 100vw
+        height: 60vh
+        position: absolute
+        display: flex 
+        justify-content: center
+        align-items: center 
+        z-index: 2
+        @extend .sm-flex-col
+        @extend .sm-mt-8
+
+        // Typography
+        @extend .sm-text-center
+        .title 
+            // Typography
+            font-weight: bold
+            @extend .text-4xl
+        .desc 
+            // Typography
+            @extend .sm-text-base, .md-text-lg
+
+       
+
 
