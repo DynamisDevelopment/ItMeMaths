@@ -8,6 +8,9 @@ nav
     position: absolute
     z-index: 10
     @extend .sm-justify-around, .md-justify-between
+
+    // Typography
+    color: #fff
     h1, div, img
         // Layout
         display: flex 
@@ -24,11 +27,11 @@ nav
     .spacer 
         // Layout
         width: 100%
-        @extend .sm-hidden, .md-block
+        @extend .sm-hidden, .lg-block
     .searchBar 
         // Layout
         margin: 0 80px 0 40px
-        @extend .sm-hidden, .md-block
+        @extend .sm-hidden, .md-inline
     .burger 
         // Layout
         width: 50px

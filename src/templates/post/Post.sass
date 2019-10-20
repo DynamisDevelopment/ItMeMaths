@@ -1,1 +1,45 @@
 @import "../../styles.sass"
+
+.post-banner
+    height: 90vh
+
+.post-content 
+    // Layout
+    margin-top: 15px
+    @extend .sm-px-4
+
+    // Typography
+    font-weight: 600
+    @extend .text-gray-700
+    @extend .sm-text-lg
+    @extend .leading-relaxed
+
+.banner-content-post
+    // Layout
+    width: 100vw
+    height: 90vh
+    position: absolute
+    display: flex 
+    justify-content: center
+    align-items: center 
+    z-index: 2
+    @extend .sm-flex-col
+    @extend .sm-mt-8
+
+    // Typography
+    @extend .sm-text-center
+    .title 
+        // Typography
+        font-weight: bold
+        @extend .text-4xl
+    .desc 
+        // Layout
+        @extend .sm-px-4, .md-px-0
+        
+        // Typography
+        @extend .sm-text-base, .md-text-lg
+    .stats 
+        // Layout
+        margin-right: 15px
+        p 
+            margin-right: 5px

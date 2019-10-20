@@ -5,14 +5,16 @@ $main-color: #ED694F
 body 
     overflow-x: hidden 
 
-.lightTheme 
-    background-color: #fff
-    color: #fff 
-
+.row 
+    // Layout
+    display: flex 
+    
 .slide 
+    // Typography
+    color: #fff
     .banner 
         // Layout
-        height: 60vh
+        width: 100vw
         z-index: 1
         &:before 
             // Layout
@@ -25,27 +27,31 @@ body
             left: 0
             background: rgba(0, 0, 0, .3)
             z-index: 2
-    .content 
-        // Layout
-        width: 100vw
-        height: 60vh
-        position: absolute
-        display: flex 
-        justify-content: center
-        align-items: center 
-        z-index: 2
-        @extend .sm-flex-col
-        @extend .sm-mt-8
+.banner-content-front 
+    // Layout
+    width: 100vw
+    height: 60vh
+    position: absolute
+    display: flex 
+    justify-content: center
+    align-items: center 
+    z-index: 2
+    @extend .sm-flex-col
+    @extend .sm-mt-8
 
+    // Typography
+    @extend .sm-text-center
+    .title 
         // Typography
-        @extend .sm-text-center
-        .title 
-            // Typography
-            font-weight: bold
-            @extend .text-4xl
-        .desc 
-            // Typography
-            @extend .sm-text-base, .md-text-lg
+        font-weight: bold
+        @extend .text-4xl
+    .desc 
+        // Layout
+        @extend .sm-px-4, .md-px-0
+        
+        // Typography
+        @extend .sm-text-base, .md-text-lg
+
 
        
 
