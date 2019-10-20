@@ -39,6 +39,9 @@ const Home = () => {
     }
     `)
 
+    const randomNum = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+    const largeNum = () => randomNum(250, 600)
+
     return (
         <Layout>
             {data.slider.posts.map((post, index) => {
@@ -51,16 +54,25 @@ const Home = () => {
                 </div>
             })}
 
-            <div className="posts">
-                {data.cards.posts.map((post, index) => {
-                    return <div className="card" key={index}>
-                        <Link to={'posts/' + post.slug}><GraphImg image={post.image} withWebp={true} className='card-img' /></Link>
-                        <h2 className='post-title'>{post.title}</h2>
-                        <p className='createdAt'>{post.createdAt}</p>
-                    </div>
-                })}
+            <div className="wrapper">
+                <div className="posts">
+                    {data.cards.posts.map((post, index) => {
+                        return <div className="card" key={index}>
+                            <Link to={'posts/' + post.slug}>
+                                <GraphImg
+                                    image={post.image}
+                                    withWebp={true}
+                                    className='card-img'
+                                    style={{ height: `${largeNum()}px` }} />
+                            </Link>
+                            <h2 className='post-title'>{post.title}</h2>
+                            <h3 className='description'>{post.description}</h3>
+                            <p className='createdAt'>{post.createdAt}</p>
+                        </div>
+                    })}
+                </div>
             </div>
-        </Layout>
+        </Layout >
     )
 }
 export default Home

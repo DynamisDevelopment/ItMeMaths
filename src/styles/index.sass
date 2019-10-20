@@ -30,22 +30,39 @@
         // Typography
         @extend .sm-text-base, .md-text-lg
 
+.wrapper 
+    // Layout
+    width: 100vw
+    display: flex 
+    justify-content: center
+    .posts 
+        // Layout
+        // display: flex 
+        // flex-wrap: wrap
+        // justify-content: space-around
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr))
+        justify-items: center
+        grid-gap: 15px
+        @extend .container
+
 .card 
     // Layout
     margin-top: 20px
+    max-width: 600px
     @extend .sm-px-4
     .card-img 
         // Layout
-        min-height: 175px
-    .post-title, .createdAt 
+        // min-height: 175px
+        @extend .mb-6
+    .post-title, .createdAt, .description 
         // Layout
-        @extend .sm-px-6
+        @extend .sm-px-6, .mb-6
     .post-title 
         // Layout
         @extend .sm-w-1_2
-        @extend .sm-py-6
 
         // Typography
         font-weight: bold
-        @extend .sm-text-2xl
+        @extend .sm-text-3xl
         @extend .font-serif

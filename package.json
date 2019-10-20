@@ -18,6 +18,7 @@
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-source-graphql": "^2.1.20",
+    "gatsby-transformer-remark": "^2.6.30",
     "graphcms-image": "^1.1.0-beta4",
     "headwindcss": "^1.0.1",
     "node-sass": "^4.12.0",

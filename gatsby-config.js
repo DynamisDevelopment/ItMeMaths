@@ -26,6 +26,6 @@ module.exports = {
           Authorization: `Bearer ${process.env.AUTH_TOKEN}`
         }
       },
-    },
+    }
   ]
 }
