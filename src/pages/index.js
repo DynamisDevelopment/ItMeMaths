@@ -72,7 +72,7 @@ const Home = () => {
                     })}
                 </div>
             </div>
-        </Layout >
+        </Layout>
     )
 }
 export default Home

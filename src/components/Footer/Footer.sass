@@ -3,8 +3,22 @@
 footer 
     // Layout
     margin-top: 40px
+    display: flex 
+    justify-content: space-around
+    flex-wrap: wrap
+    @extend .sm-flex-col, .md-flex-row
+
+    // Typography
+    @extend .text-gray-700
+    @extend .text-lg
     .section
         // Layout
+        max-width: 300px
+        max-height: 400px 
+        margin-top: 25px
+        display: flex 
+        flex-direction: column 
+        flex-wrap: wrap
         @extend .sm-px-4 
 
         // Typography
@@ -15,16 +29,16 @@ footer
         .footer-row 
             // Layout
             width: 100vw
+            margin-top: 10px
             display: flex
             align-items: center
-
-            // Typography
-            @extend .text-base
             p 
                 // Layout
+                max-width: 400px
                 @extend .sm-px-10
         .about-row 
             // Layout
+            max-width: 500px
             justify-content: space-between
             @extend .footer-row 
             .profile-picture 
@@ -34,8 +48,13 @@ footer
                 height: 75px
         .details-row 
             // Layout
+            min-width: 400px
+            display: flex 
             @extend .footer-row
-        .copyright 
-            // Layout
-            justify-content: center
-            @extend .footer-row
+    .copyright 
+        // Layout
+        width: 100vw
+        padding-bottom: 10px
+        display: flex
+        justify-content: center
+        @extend .footer-row
