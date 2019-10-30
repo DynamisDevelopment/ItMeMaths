@@ -2,12 +2,14 @@
 
 .home-banner 
     // Layout
-    height: 60vh
+    height: 50vh
+    min-height: 400px
 
 .banner-content-front 
     // Layout
     width: 100vw
-    height: 60vh
+    height: 50vh
+    min-height: 400px
     position: absolute
     display: flex 
     justify-content: center
@@ -22,7 +24,7 @@
         // Typography
         font-weight: bold
         @extend .text-4xl
-        &:hover 
+        &:hover h1
             // Misc Styling
             transition: .3s ease-in-out
             color: $main-color
@@ -43,11 +45,6 @@
         // Layout
         display: flex 
         flex-wrap: wrap
-        // justify-content: space-around
-        // display: grid
-        // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr))
-        // justify-items: center
-        // grid-gap: 15px
         @extend .container
 
 .card 
