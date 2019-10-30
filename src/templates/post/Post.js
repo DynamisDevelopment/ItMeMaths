@@ -50,11 +50,11 @@ const Post = props => {
                         <div className="row">
                             <div className="stats row">
                                 <p>{slider.views === null ? 0 : 1}</p>
-                                <img src="#" alt="icon" />
+                                <img src="#" alt="view" />
                             </div>
                             <div className="stats row">
                                 <p>{slider.likes === null ? 0 : 1}</p>
-                                <img src="#" alt="icon" />
+                                <img src="#" alt="like" />
                             </div>
                         </div>
                     </div>

@@ -22,6 +22,10 @@
         // Typography
         font-weight: bold
         @extend .text-4xl
+        &:hover 
+            // Misc Styling
+            transition: .3s ease-in-out
+            color: $main-color
     .desc 
         // Layout
         @extend .container
@@ -39,7 +43,7 @@
         // Layout
         display: flex 
         flex-wrap: wrap
-        justify-content: space-around
+        // justify-content: space-around
         // display: grid
         // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr))
         // justify-items: center
@@ -52,9 +56,12 @@
     width: 100%
     max-width: 600px
     @extend .sm-px-4
+    &:hover 
+        .post-title 
+            color: $main-color
     .card-img 
         // Layout
-        // min-height: 175px
+        min-height: 175px
         @extend .mb-6
     .post-title, .createdAt, .description 
         // Layout

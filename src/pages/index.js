@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import GraphImg from "graphcms-image"
 import { Carousel } from 'react-responsive-carousel'
+import Masonry from 'react-masonry-component'
 import '../styles.sass'
 import '../styles/index.sass'
 
@@ -38,9 +39,8 @@ const Home = () => {
         }
     }
     `)
-
     const randomNum = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
-    const largeNum = () => randomNum(250, 600)
+    const largeNum = () => randomNum(200, 600)
 
     return (
         <Layout>
@@ -55,9 +55,9 @@ const Home = () => {
             })}
 
             <div className="wrapper">
-                <div className="posts">
+                <Masonry className={'posts'}>
                     {data.cards.posts.map((post, index) => {
-                        return <div className="card" key={index}>
+                        return <div className={'card'} key={index}>
                             <Link to={'posts/' + post.slug}>
                                 <GraphImg
                                     image={post.image}
@@ -70,7 +70,7 @@ const Home = () => {
                             <p className='createdAt'>{post.createdAt}</p>
                         </div>
                     })}
-                </div>
+                </Masonry>
             </div>
         </Layout>
     )
