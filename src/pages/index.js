@@ -4,19 +4,20 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 //* Styles 
 import '../styles.sass'
 import '../styles/index.sass'
-import 'pure-react-carousel/dist/react-carousel.es.css'
 
 // * Components 
 import Layout from '../components/layout'
 import GraphImg from "graphcms-image"
-import { CarouselProvider, Slider, Slide } from 'pure-react-carousel'
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
 import Masonry from 'react-masonry-component'
+import Moment from 'react-moment'
 
 const Home = () => {
     const data = useStaticQuery(graphql`
     query {
         slider: graphcms {
-            posts {
+            posts(orderBy: likes_ASC) {
                 title 
                 description
                 slug 
@@ -28,7 +29,7 @@ const Home = () => {
             }
         }
         cards: graphcms {
-            posts {
+            posts(where: {status: PUBLISHED}) {
                 title 
                 description
                 slug 
@@ -44,33 +45,34 @@ const Home = () => {
     `)
 
     const randomNum = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
-    const largeNum = () => randomNum(200, 600)
+    const largeNum = () => randomNum(200, 500)
 
-    const settings = {
-        naturalSlideWidth: 4,
-        naturalSlideHeight: 1,
-        totalSlides: data.slider.posts.length,
-        infinite: true
+    var settings = {
+        dots: true,
+        lazyLoad: true,
+        arrows: false,
+        infinite: true,
+        autoplay: true,
+        speed: 4000,
+        slidesToShow: 1,
+        slidesToScroll: 1
     }
 
     return (
         <Layout>
-            <CarouselProvider {...settings}>
-                <Slider>
-                    {data.slider.posts.map((post, index) => {
-                        return <Slide key={index} index={index} className='slide'>
-                            <div className="banner-content-front">
-                                <Link to={'posts/' + post.slug} className='title'>
-                                    <h1>{post.title}</h1>
-                                    <h3 className='desc'>{post.description}</h3>
-                                </Link>
-                            </div>
-                            <GraphImg image={post.image} withWebp={true} fit={'clip'} className='banner home-banner' />
-                        </Slide>
-                    })}
-                </Slider>
-            </CarouselProvider>
-
+            <Slider {...settings} className='slider'>
+                {data.slider.posts.map((post, index) => {
+                    return <div key={index} className='slide'>
+                        <div className="banner-content-front">
+                            <Link to={'posts/' + post.slug} className='title'>
+                                <h1>{post.title}</h1>
+                                <h3 className='desc'>{post.description}</h3>
+                            </Link>
+                        </div>
+                        <GraphImg image={post.image} withWebp={true} fit={'clip'} className='banner home-banner' />
+                    </div>
+                })}
+            </Slider>
             <div className="wrapper">
                 <Masonry className={'posts'}>
                     {data.cards.posts.map((post, index) => {
@@ -84,7 +86,7 @@ const Home = () => {
                             </Link>
                             <h2 className='post-title'>{post.title}</h2>
                             <h3 className='description'>{post.description}</h3>
-                            <p className='createdAt'>{post.createdAt}</p>
+                            <Moment format="MMMM D, YYYY" className='createdAt'>{post.createdAt}</Moment>
                         </div>
                     })}
                 </Masonry>
@@ -93,3 +95,21 @@ const Home = () => {
     )
 }
 export default Home
+
+
+
+// <CarouselProvider {...settings}>
+//                 <Slider>
+//                     {data.slider.posts.map((post, index) => {
+//                         return <Slide key={index} index={index} className='slide'>
+//                             <div className="banner-content-front">
+//                                 <Link to={'posts/' + post.slug} className='title'>
+//                                     <h1>{post.title}</h1>
+//                                     <h3 className='desc'>{post.description}</h3>
+//                                 </Link>
+//                             </div>
+//                             <GraphImg image={post.image} withWebp={true} fit={'clip'} className='banner home-banner' />
+//                         </Slide>
+//                     })}
+//                 </Slider>
+//             </CarouselProvider>

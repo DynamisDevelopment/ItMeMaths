@@ -1,8 +1,36 @@
 @import "../styles.sass"
 
+.slick-slider, .slick-list, .slick-track, .slick-slide 
+    // Layout
+    width: 100%
+    height: 500px
+.slick-slider 
+    // Layout
+    display: flex !important
+    justify-content: center
+    .slick-dots 
+        // Layout
+        position: absolute
+        margin-top: 450px
+        display: flex !important
+        li 
+            // Layout
+            width: 10px
+            height: 10px
+
+            // Misc Styling
+            font-size: 0
+            background-color: grey
+            border-radius: 50%
+            @extend .mx-6
+
+            // Animation
+            transition: 1s ease-in-out
+        .slick-active 
+            background-color: #fff
+
 .home-banner 
     // Layout
-    height: 50vh
     min-height: 400px
 
 .banner-content-front 
@@ -23,7 +51,8 @@
     .title 
         // Typography
         font-weight: bold
-        @extend .text-4xl
+        @extend .sm-text-3xl, .md-text-4xl, .lg-text-6xl
+        @extend .font-serif
         &:hover h1
             // Misc Styling
             transition: .3s ease-in-out
@@ -43,15 +72,18 @@
     justify-content: center
     .posts 
         // Layout
-        display: flex 
-        flex-wrap: wrap
         @extend .container
+    .center-wrapper 
+        width: 100%
+        display: flex 
+        justify-content: center
+        flex-wrap: wrap
 
 .card 
     // Layout
     margin-top: 20px
     width: 100%
-    max-width: 600px
+    max-width: 400px
     @extend .sm-px-4
     &:hover 
         .post-title 

@@ -3,16 +3,19 @@ import { Link } from 'gatsby'
 import './Header.sass'
 
 const Header = ({ context }) => {
+
     return (
         <header className='header'>
             <nav>
                 <Link to='/'><h1 className='title'>ItMeMaths</h1></Link>
                 <div className="spacer"></div>
-                <div>
-                    <input type="text" className="searchBar" />
-                    <div className="burger">Burger</div>
+                <div className="searchBar">
+                    <img src="../assets/icons/search.svg" alt="Search Icon" className='search-icon' />
+                    <input type="text" placeholder="Search Articles" />
                 </div>
+                <div><img src="./assets/icons/burger.svg" alt="burger" className='burger' /></div>
             </nav>
+
         </header>
     )
 }

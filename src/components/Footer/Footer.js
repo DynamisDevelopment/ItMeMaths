@@ -40,20 +40,25 @@ const Footer = () => {
                     <div className="section">
                         <h1>Contacts</h1>
                         <div className="details-row">
+                            <img src="../assets/icons/pin.svg" alt="Pin Icon" className='icon' />
                             <p>{profile.address}</p>
                         </div>
                         <div className="details-row">
+                            <img src="../assets/icons/envelope.svg" alt="Envelope Icon" className='icon' />
                             <p>{profile.email}</p>
                         </div>
                         <div className="details-row">
+                            <img src="../assets/icons/phone.svg" alt="Phone Icon" className='icon' />
                             <p>{profile.phoneNumber}</p>
                         </div>
                     </div>
                     <div className="section">
                         <h1>Subjects</h1>
-                        {data.graphcms.categories.map((subject, index) => {
-                            return <Link to={'archive' + subject.slug} key={index}><p>{subject.name}</p></Link>
-                        })}
+                        <div className="subject-wrapper">
+                            {data.graphcms.categories.map((subject, index) => {
+                                return <Link to={'archive' + subject.slug} key={index} className='subject'><p>{subject.name}</p></Link>
+                            })}
+                        </div>
                     </div>
                     <div className="copyright">
                         <p>© {new Date().getFullYear()} All rights reserved.</p>
@@ -65,3 +70,4 @@ const Footer = () => {
 }
 
 export default Footer
+
