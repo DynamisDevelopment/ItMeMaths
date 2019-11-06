@@ -7,6 +7,7 @@ import '../styles/index.sass'
 
 // * Components 
 import Layout from '../components/layout'
+import Navbar from '../components/Navbar/Navbar'
 import GraphImg from "graphcms-image"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -73,6 +74,7 @@ const Home = () => {
                     </div>
                 })}
             </Slider>
+
             <div className="wrapper">
                 <Masonry className={'posts'}>
                     {data.cards.posts.map((post, index) => {
@@ -95,21 +97,3 @@ const Home = () => {
     )
 }
 export default Home
-
-
-
-// <CarouselProvider {...settings}>
-//                 <Slider>
-//                     {data.slider.posts.map((post, index) => {
-//                         return <Slide key={index} index={index} className='slide'>
-//                             <div className="banner-content-front">
-//                                 <Link to={'posts/' + post.slug} className='title'>
-//                                     <h1>{post.title}</h1>
-//                                     <h3 className='desc'>{post.description}</h3>
-//                                 </Link>
-//                             </div>
-//                             <GraphImg image={post.image} withWebp={true} fit={'clip'} className='banner home-banner' />
-//                         </Slide>
-//                     })}
-//                 </Slider>
-//             </CarouselProvider>

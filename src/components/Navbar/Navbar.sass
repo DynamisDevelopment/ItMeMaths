@@ -1,0 +1,44 @@
+@import "../../styles.sass"
+
+.sidebar
+    // Layout
+    overflow-y: scroll
+    position: absolute
+    top: 0
+    width: 20vw
+    margin-left: 80vw
+    height: 100vh 
+    background-color: #fff
+    z-index: 11
+    .top 
+        // Layout
+        height: 90px
+        display: flex 
+        justify-content: space-around
+        align-items: center
+        @extend .mx-10
+
+        // Misc Styling
+        border-bottom: 1px solid rgba(0, 0, 0, .2)
+        h1 
+            // Misc Styling
+            color: grey
+            @extend .siteName
+        .close 
+            cursor: pointer
+    .categories 
+        // Layout
+        margin-top: 20px
+        @extend  .mx-10
+        li 
+            // Layout
+            display: flex 
+            justify-content: space-between
+
+            // Typography
+            color: grey
+            @extend .text-2xl
+            &:hover 
+                // Typography
+                color: black
+

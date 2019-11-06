@@ -13,18 +13,13 @@ nav
     color: #fff
     h1, div
         // Layout
+        width: 100%
+        height: 80px
         display: flex 
         justify-content: center
         align-items: center
         height: 90px
         border: 1px solid rgba(255, 255, 255, .2)
-        @extend .md-px-24
-    .title 
-        // Typography
-        color: $main-color
-        font-weight: bold
-        @extend .text-2xl
-        @extend .tracking-widest
     .spacer 
         // Layout
         width: 100%
@@ -33,6 +28,7 @@ nav
         // Layout
         display: flex
         width: 100%
+        max-width: 500px
         .search-icon 
             // Layout
             height: 18px
@@ -43,10 +39,14 @@ nav
             // Misc Styling
             background-color: transparent
             @extend .sm-hidden, .lg-inline
-    .burger 
-        // Layout
-        width: 100px
-        height: 100px
-        cursor: pointer
+    .burger
+        // Layout 
+        min-width: 100px
+        max-width: 175px
+        img 
+            // Layout
+            width: 40px
+            height: 40px
+            cursor: pointer
 
 
