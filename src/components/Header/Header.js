@@ -4,7 +4,7 @@ import './Header.sass'
 import Navbar from '../Navbar/Navbar'
 
 const Header = ({ context }) => {
-    const [show, toggle] = useState(true)
+    const [show, toggle] = useState(false)
 
     return (
         <header className='header'>
@@ -15,7 +15,7 @@ const Header = ({ context }) => {
                     <img src="../assets/icons/search.svg" alt="Search Icon" className='search-icon' />
                     <input type="text" placeholder="Search Articles" />
                 </div>
-                <div className='burger' onClick={() => toggle(true)}><img src="./assets/icons/burger.svg" alt="burger" /></div>
+                <div className='burger' onClick={() => toggle(true)}><img src="../assets/icons/burger.svg" alt="burger" /></div>
             </nav>
             <Navbar show={show} toggle={toggle} />
         </header>

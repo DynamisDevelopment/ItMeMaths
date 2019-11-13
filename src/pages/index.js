@@ -85,8 +85,8 @@ const Home = () => {
                                     withWebp={true}
                                     className='card-img'
                                     style={{ height: `${largeNum()}px` }} />
+                                <h2 className='post-title'>{post.title}</h2>
                             </Link>
-                            <h2 className='post-title'>{post.title}</h2>
                             <h3 className='description'>{post.description}</h3>
                             <Moment format="MMMM D, YYYY" className='createdAt'>{post.createdAt}</Moment>
                         </div>
