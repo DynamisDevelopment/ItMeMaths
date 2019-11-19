@@ -56,7 +56,7 @@ const Footer = () => {
                         <h1>Subjects</h1>
                         <div className="subject-wrapper">
                             {data.graphcms.categories.map((subject, index) => {
-                                return <Link to={'archive' + subject.slug} key={index} className='subject'><p>{subject.name}</p></Link>
+                                return <Link to={'archive/' + subject.slug} key={index} className='subject'><p>{subject.name}</p></Link>
                             })}
                         </div>
                     </div>
