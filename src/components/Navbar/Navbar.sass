@@ -73,24 +73,30 @@
                     color: $main-color
         .subCategories 
             // Layout
+            margin-top: -170px
             overflow-x: hidden
             position: absolute
             float: left
             left: 0
             width: 70%
             height: 100vh 
-            background-color: #fff
             z-index: 12
+
+            // Misc Styling
+            background-color: #fff
         .subCat 
             // Layout
             @extend .px-4
         .subPosts 
             // Layout
+            margin-top: 0px
+            height: 100vh 
             display: flex 
             flex-direction: column
             width: 90% 
             z-index: 10
             @extend .px-4
+
     .contact 
         // Layout
         margin-top: 20px
