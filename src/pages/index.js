@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery, Link } from 'gatsby'
 
 //* Styles 
@@ -59,6 +59,8 @@ const Home = () => {
         slidesToScroll: 1
     }
 
+    const [gridView, toggleGrid] = useState(false)
+
     return (
         <Layout>
             <Slider {...settings} className='slider'>
@@ -75,10 +77,16 @@ const Home = () => {
                 })}
             </Slider>
 
+            <div className="layout-options">
+                <img src="../assets/icons/list-view.svg" alt="List View Option" onClick={() => toggleGrid(false)} />
+                <img src="../assets/icons/masonry.svg" alt="Grid View Option" onClick={() => toggleGrid(true)} />
+            </div>
+
             <div className="wrapper">
-                <Masonry className={'posts'}>
+                {/*//* Grid View */}
+                {gridView && <Masonry className={'posts'}>
                     {data.cards.posts.map((post, index) => {
-                        return <div className={'card'} key={index}>
+                        return <div className={'card-grid'} key={index}>
                             <Link to={'posts/' + post.slug}>
                                 <GraphImg
                                     image={post.image}
@@ -91,7 +99,20 @@ const Home = () => {
                             <Moment format="MMMM D, YYYY" className='createdAt'>{post.createdAt}</Moment>
                         </div>
                     })}
-                </Masonry>
+                </Masonry>}
+
+                {/*//* Compact/List View */}
+                {!gridView && <div className={'list-posts'}>
+                    {data.cards.posts.map((post, index) => {
+                        return <div className='card-list' key={index}>
+                            <Link to={'posts/' + post.slug}>
+                                <h2 className='post-title'>{post.title}</h2>
+                            </Link>
+                            <h3 className='description'>{post.description}</h3>
+                            <Moment format="MMMM D, YYYY" className='createdAt'>{post.createdAt}</Moment>
+                        </div>
+                    })}
+                </div>}
             </div>
         </Layout>
     )

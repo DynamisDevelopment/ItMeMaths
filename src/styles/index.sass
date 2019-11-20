@@ -79,7 +79,7 @@
         justify-content: center
         flex-wrap: wrap
 
-.card 
+.card-grid 
     // Layout
     margin-top: 20px
     width: 100%
@@ -103,3 +103,13 @@
         font-weight: bold
         @extend .sm-text-3xl
         @extend .font-serif
+
+.card-list 
+    @extend .card-grid
+
+    // Layout
+    max-width: 100%
+    @extend .container
+    .post-title, .createdAt, .description 
+        // Layout
+        margin-bottom: 5px
