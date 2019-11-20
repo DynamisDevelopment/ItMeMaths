@@ -17,6 +17,7 @@ export const data = graphql`
                 likes
                 views
                 image: bannerImage {
+                    fileName
                     handle
                     width 
                     height
@@ -44,7 +45,8 @@ const Post = props => {
         <div>
             <Layout>
                 <div className='slide'>
-                    <div className="banner-content-post">
+                    <div
+                        className={slider.image.fileName !== 'x.png' ? "banner-content-post" : "banner-content-post text-banner"}>
                         <h1 className='title'>{slider.title}</h1>
                         <h4 className="createdAt">{slider.createdAt}</h4>
                         <div className="row">
@@ -58,7 +60,9 @@ const Post = props => {
                             </div>
                         </div>
                     </div>
-                    <GraphImg image={slider.image} withWebp={true} fit={'clip'} className='banner post-banner' />
+
+                    {slider.image.fileName !== 'x.png' ? <GraphImg image={slider.image} withWebp={true} fit={'clip'} className='banner post-banner' /> : <div className='text-banner'></div>}
+
 
                 </div>
                 <div className="post-content">
