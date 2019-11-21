@@ -59,8 +59,9 @@ const Home = () => {
         slidesToShow: 1,
         slidesToScroll: 1
     }
+
     const sliderPosts = []
-    data.slider.posts.forEach(post => { if (post.image.fileName !== 'x.png') sliderPosts.push(post) })
+    data.slider.posts.forEach(post => { if (post.image) sliderPosts.push(post) })
 
     return (
         <Layout>
@@ -83,12 +84,12 @@ const Home = () => {
                     {data.cards.posts.map((post, index) => {
                         return <div className={'card'} key={index}>
                             <Link to={'posts/' + post.slug}>
-                                {post.image.fileName !== 'x.png' && <GraphImg
+                                {post.image && <GraphImg
                                     image={post.image}
                                     withWebp={true}
                                     className='card-img'
                                     style={{ height: `${largeNum()}px` }} />}
-                                {post.image.fileName === 'x.png' ?
+                                {post.image ?
                                     <h2 className='post-title imageless'>{post.title}</h2> :
                                     <h2 className='post-title'>{post.title}</h2>
                                 }

@@ -46,7 +46,7 @@ const Post = props => {
             <Layout>
                 <div className='slide'>
                     <div
-                        className={slider.image.fileName !== 'x.png' ? "banner-content-post" : "banner-content-post text-banner"}>
+                        className={slider.image ? "banner-content-post" : "banner-content-post text-banner"}>
                         <h1 className='title'>{slider.title}</h1>
                         <h4 className="createdAt">{slider.createdAt}</h4>
                         <div className="row">
@@ -61,7 +61,7 @@ const Post = props => {
                         </div>
                     </div>
 
-                    {slider.image.fileName !== 'x.png' ? <GraphImg image={slider.image} withWebp={true} fit={'clip'} className='banner post-banner' /> : <div className='text-banner'></div>}
+                    {slider.image ? <GraphImg image={slider.image} withWebp={true} fit={'clip'} className='banner post-banner' /> : <div className='text-banner'></div>}
 
 
                 </div>
