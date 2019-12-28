@@ -5,6 +5,7 @@ import './Post.sass'
 
 // * Components 
 import Layout from '../../components/layout'
+import Moment from 'react-moment'
 
 export const data = graphql`
     query($slug: String!) {
@@ -48,15 +49,15 @@ const Post = props => {
                     <div
                         className={slider.image ? "banner-content-post" : "banner-content-post text-banner"}>
                         <h1 className='title'>{slider.title}</h1>
-                        <h4 className="createdAt">{slider.createdAt}</h4>
+                        <Moment format="MMMM D, YYYY" className="createdAt">{slider.createdAt}</Moment>
                         <div className="row">
                             <div className="stats row">
                                 <p>{slider.views === null ? 0 : 1}</p>
-                                <img src="#" alt="view" />
+                                <img src="#" alt="views" />
                             </div>
                             <div className="stats row">
                                 <p>{slider.likes === null ? 0 : 1}</p>
-                                <img src="#" alt="like" />
+                                <img src="#" alt="likes" />
                             </div>
                         </div>
                     </div>
