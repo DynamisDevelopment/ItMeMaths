@@ -104,12 +104,22 @@
         @extend .sm-text-3xl
         @extend .font-serif
 
-.card-list 
-    @extend .card-grid
-
+.list-posts
     // Layout
-    max-width: 100%
-    @extend .container
-    .post-title, .createdAt, .description 
+    display: flex 
+    justify-content: space-around
+    flex-wrap: wrap 
+    @extend .mx-20
+    .card-list 
+        @extend .card-grid
+
         // Layout
-        margin-bottom: 5px
+        max-width: 50%
+        min-width: 320px
+        @extend .container
+        .post-title, .createdAt, .description 
+            // Layout
+            margin-bottom: 5px
+        .description 
+            // Layout
+            max-width: 90%
