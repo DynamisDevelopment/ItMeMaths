@@ -65,7 +65,7 @@ const Home = () => {
         <Layout>
             <Slider {...settings} className='slider'>
                 {data.slider.posts.map((post, index) => {
-                    return <div key={index} className='slide'>
+                    return post.image && <div key={index} className='slide'>
                         <div className="banner-content-front">
                             <Link to={'posts/' + post.slug} className='title'>
                                 <h1>{post.title}</h1>
@@ -88,11 +88,11 @@ const Home = () => {
                     {data.cards.posts.map((post, index) => {
                         return <div className={'card-grid'} key={index}>
                             <Link to={'posts/' + post.slug}>
-                                <GraphImg
+                                {post.image && <GraphImg
                                     image={post.image}
                                     withWebp={true}
                                     className='card-img'
-                                    style={{ height: `${largeNum()}px` }} />
+                                    style={{ height: `${largeNum()}px` }} />}
                                 <h2 className='post-title'>{post.title}</h2>
                             </Link>
                             <h3 className='description'>{post.description}</h3>
@@ -101,7 +101,7 @@ const Home = () => {
                     })}
                 </Masonry>}
 
-                {/*//* Compact/List View */}
+                {/*//* Compact List View */}
                 {!gridView && <div className={'list-posts'}>
                     {data.cards.posts.map((post, index) => {
                         return <div className='card-list' key={index}>
