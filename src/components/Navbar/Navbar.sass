@@ -1,0 +1,110 @@
+@import "../../styles.sass"
+
+.sidebar
+    // Layout
+    overflow-y: scroll
+    position: fixed
+    top: 0
+    right: 0
+    height: 100vh 
+    background-color: #fff
+    z-index: 11
+    min-width: 320px
+    @extend .sm-w-screen, .md-w-1_2, .lg-w-1_4
+    .top 
+        // Layout
+        height: 90px
+        display: flex 
+        justify-content: space-around
+        align-items: center
+        @extend .mx-10
+
+        // Misc Styling
+        border-bottom: 1px solid rgba(0, 0, 0, .2)
+        h1 
+            // Misc Styling
+            color: grey
+            @extend .siteName
+        .close 
+            cursor: pointer
+    .sectionTitle 
+        // Layout
+        width: 100%
+        display: flex 
+        justify-content: flex-end
+        margin-top: 15px
+        @extend .pr-10
+
+        // Typography
+        color: $main-color
+        font-weight: bold
+        @extend .text-3xl
+    .veil 
+        // Layout
+        width: 100%
+        height: 100vh 
+        position: absolute 
+        top: 0 
+        left: 0
+        background-color: rgba(200, 200, 200, .5)
+        visibility: hidden
+    .more 
+        // Layout
+        height: 15x
+        width: 15px
+        cursor: pointer
+    .categories 
+        // Layout
+        margin-top: 20px
+        @extend  .mx-10
+        .category 
+            // Layout
+            display: flex 
+            justify-content: space-between
+
+            // Typography
+            color: grey
+            @extend .text-2xl
+            a
+                // Animation
+                transition: .3s ease-in-out
+                &:hover 
+                    // Typography
+                    color: $main-color
+        .subCategories 
+            // Layout
+            margin-top: -170px
+            overflow-x: hidden
+            position: absolute
+            float: left
+            left: 0
+            width: 70%
+            height: 100vh 
+            z-index: 12
+
+            // Misc Styling
+            background-color: #fff
+        .subCat 
+            // Layout
+            @extend .px-4
+        .subPosts 
+            // Layout
+            margin-top: 0px
+            height: 100vh 
+            display: flex 
+            flex-direction: column
+            width: 90% 
+            z-index: 10
+            @extend .px-4
+
+    .contact 
+        // Layout
+        margin-top: 20px
+        text-align: right
+        float: right
+        max-width: 70%
+        @extend .mx-10
+
+        // Typography
+        @extend .text-xl
+

@@ -1,0 +1,76 @@
+@import "../../styles.sass"
+
+footer 
+    // Layout
+    margin-top: 40px
+    display: flex 
+    justify-content: space-around
+    flex-wrap: wrap
+    @extend .sm-flex-col, .md-flex-row
+
+    // Typography
+    @extend .text-gray-700
+    @extend .text-lg
+    .section
+        // Layout
+        max-width: 300px
+        margin-top: 25px
+        @extend .sm-px-4 
+
+        // Typography
+        @extend .text-lg
+        h1 
+            // Typography
+            font-weight: bold
+        .subject-wrapper 
+            // Layout
+            max-height: 200px 
+            display: flex 
+            flex-direction: column
+            flex-wrap: wrap
+            .subject 
+                // Layout
+                padding-right: 15px
+
+                // Animation
+                transition: .2s ease-in-out
+                &:hover 
+                    color: $main-color
+
+        .footer-row 
+            // Layout
+            width: 100vw
+            margin-top: 10px
+            display: flex
+            align-items: center
+            p 
+                // Layout
+                max-width: 400px
+                @extend .sm-px-10
+        .about-row 
+            // Layout
+            max-width: 500px
+            justify-content: space-between
+            @extend .footer-row 
+            .profile-picture 
+                // Layout
+                margin-left: 5px
+                width: 75px
+                height: 75px
+        .details-row 
+            // Layout
+            min-width: 400px
+            display: flex 
+            @extend .footer-row
+        .icon 
+            // Layout
+            height: 20px 
+            width: 20px
+    .copyright 
+        // Layout
+        width: 100vw
+        margin-top: 15px
+        padding-bottom: 10px
+        display: flex
+        justify-content: center
+        @extend .footer-row

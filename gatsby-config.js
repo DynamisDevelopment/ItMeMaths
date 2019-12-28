@@ -13,5 +13,19 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "Graphcms",
+        // This is field under which it's accessible
+        fieldName: "graphcms",
+        // Url to query from
+        url: "https://api-useast.graphcms.com/v1/ck1wrwwpk1dk401a07d1v0nyv/master",
+        headers: {
+          Authorization: `Bearer ${process.env.AUTH_TOKEN}`
+        }
+      },
+    }
   ]
 }

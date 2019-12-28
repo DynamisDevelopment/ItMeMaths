@@ -1,0 +1,108 @@
+@import "../styles.sass"
+
+.slick-slider, .slick-list, .slick-track, .slick-slide 
+    // Layout
+    width: 100%
+    height: 550px
+.slick-slider 
+    // Layout
+    display: flex !important
+    justify-content: center
+    .slick-dots 
+        // Layout
+        position: absolute
+        margin-top: 500px
+        display: flex !important
+        li 
+            // Layout
+            width: 10px
+            height: 10px
+
+            // Misc Styling
+            font-size: 0
+            background-color: grey
+            border-radius: 50%
+            @extend .mx-6
+
+            // Animation
+            transition: 1s ease-in-out
+        .slick-active 
+            background-color: #fff
+
+.home-banner 
+    // Layout
+    min-height: 400px
+
+.banner-content-front 
+    // Layout
+    width: 100vw
+    height: 50vh
+    min-height: 400px
+    position: absolute
+    display: flex 
+    justify-content: center
+    align-items: center 
+    z-index: 2
+    @extend .sm-flex-col
+    @extend .sm-mt-8
+
+    // Typography
+    @extend .sm-text-center
+    .title 
+        // Typography
+        font-weight: bold
+        @extend .sm-text-3xl, .md-text-4xl, .lg-text-6xl
+        @extend .font-serif
+        &:hover h1
+            // Misc Styling
+            transition: .3s ease-in-out
+            color: $main-color
+    .desc 
+        // Layout
+        @extend .container
+        @extend .sm-px-4, .md-px-12, .lg-px-32
+        
+        // Typography
+        @extend .sm-text-base, .md-text-lg
+
+.wrapper 
+    // Layout
+    width: 100vw
+    display: flex 
+    justify-content: center
+    .posts 
+        // Layout
+        @extend .container
+    .center-wrapper 
+        width: 100%
+        display: flex 
+        justify-content: center
+        flex-wrap: wrap
+
+.card 
+    // Layout
+    margin-top: 20px
+    width: 100%
+    max-width: 400px
+    @extend .sm-px-4
+    &:hover 
+        .post-title 
+            color: $main-color
+    .card-img 
+        // Layout
+        min-height: 175px
+        @extend .mb-6
+    .post-title, .createdAt, .description 
+        // Layout
+        @extend .sm-px-6, .mb-6
+    .post-title 
+        // Layout
+        @extend .sm-w-1_2
+
+        // Typography
+        font-weight: bold
+        @extend .sm-text-3xl
+        @extend .font-serif
+    .imageless 
+        // Typography
+        text-align: center !important
