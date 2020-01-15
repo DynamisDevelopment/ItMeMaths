@@ -59,7 +59,7 @@ const Home = () => {
         slidesToScroll: 1
     }
 
-    const [gridView, toggleGrid] = useState(false)
+    const [gridView, toggleGrid] = useState(true)
 
     return (
         <Layout>

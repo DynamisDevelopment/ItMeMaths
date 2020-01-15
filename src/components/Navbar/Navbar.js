@@ -11,10 +11,10 @@ const Navbar = ({ show, toggle }) => {
                 name 
                 slug
                 subCategories {
-                    title 
+                    name 
                     slug
                     posts {
-                        title 
+                        title
                         slug
                     }
                 }
@@ -108,11 +108,11 @@ const SubCategory = ({ subject, key, showExtras, toggleExtras }) => {
 
                         {/* // * Posts */}
                         <animated.ul className="subCategories subPosts" style={postListSpring}>
-                            {subCat.posts.map((post, key) => <li className="post">
+                            {subCat.posts.map((post, key) => <li className="post" key={key}>
                                 <Link to={'posts/' + post.slug}>{post.title}</Link>
                             </li>)}
                         </animated.ul>
-                        <Link to={'archive/' + subCat.slug}>{subCat.title}</Link>
+                        <Link to={'archive/' + subCat.slug}>{subCat.name}</Link>
                     </div>
                 })}
             </animated.ul>

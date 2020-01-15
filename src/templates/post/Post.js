@@ -49,16 +49,7 @@ const Post = props => {
                     <div className={slider.image ? "banner-content-post" : "banner-content-imgless-post"}>
                         <h1 className='title'>{slider.title}</h1>
                         <Moment format="MMMM D, YYYY" className='createdAt'>{slider.createdAt}</Moment>
-                        <div className="row">
-                            <div className="stats row">
-                                <p>{slider.views === null ? 0 : 1}</p>
-                                <img src="#" alt="view" />
-                            </div>
-                            <div className="stats row">
-                                <p>{slider.likes === null ? 0 : 1}</p>
-                                <img src="#" alt="like" />
-                            </div>
-                        </div>
+
                     </div>
                     {slider.image && <GraphImg image={slider.image} withWebp={true} fit={'clip'} className='banner post-banner' />}
 
@@ -72,3 +63,14 @@ const Post = props => {
 }
 
 export default Post
+
+// <div className="row">
+// <div className="stats row">
+//     <p>{slider.views === null ? 0 : 1}</p>
+//     <img src="#" alt="view" />
+// </div>
+// <div className="stats row">
+//     <p>{slider.likes === null ? 0 : 1}</p>
+//     <img src="#" alt="like" />
+// </div>
+// </div>
