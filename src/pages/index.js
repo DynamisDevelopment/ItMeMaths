@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery, Link } from 'gatsby'
 
 //* Styles 
@@ -60,14 +60,15 @@ const Home = () => {
         slidesToScroll: 1
     }
 
-    const sliderPosts = []
-    data.slider.posts.forEach(post => { if (post.image) sliderPosts.push(post) })
+    const [gridView, toggleGrid] = useState(true)
+
 
     return (
         <Layout>
             <Slider {...settings} className='slider'>
-                {sliderPosts.map((post, index) => {
-                    return <div key={index} className='slide'>
+                {data.slider.posts.map((post, index) => {
+                    return post.image && <div key={index} className='slide'>
+
                         <div className="banner-content-front">
                             <Link to={'posts/' + post.slug} className='title'>
                                 <h1>{post.title}</h1>
@@ -79,26 +80,44 @@ const Home = () => {
                 })}
             </Slider>
 
+            <div className="layout-options">
+                <img src="../assets/icons/list-view.svg" alt="List View Option" onClick={() => toggleGrid(false)} />
+                <img src="../assets/icons/masonry.svg" alt="Grid View Option" onClick={() => toggleGrid(true)} />
+            </div>
+
             <div className="wrapper">
-                <Masonry className={'posts'}>
+                {/*//* Grid View */}
+                {gridView && <Masonry className={'posts'}>
                     {data.cards.posts.map((post, index) => {
-                        return <div className={'card'} key={index}>
+                        return <div className={'card-grid'} key={index}>
                             <Link to={'posts/' + post.slug}>
                                 {post.image && <GraphImg
                                     image={post.image}
                                     withWebp={true}
                                     className='card-img'
                                     style={{ height: `${largeNum()}px` }} />}
-                                {post.image ?
-                                    <h2 className='post-title imageless'>{post.title}</h2> :
-                                    <h2 className='post-title'>{post.title}</h2>
-                                }
+
+                                <h2 className='post-title'>{post.title}</h2>
                             </Link>
                             <h3 className='description'>{post.description}</h3>
                             <Moment format="MMMM D, YYYY" className='createdAt'>{post.createdAt}</Moment>
                         </div>
                     })}
-                </Masonry>
+                </Masonry>}
+
+                {/*//* Compact List View */}
+                {!gridView && <div className={'list-posts'}>
+                    {data.cards.posts.map((post, index) => {
+                        return <div className='card-list' key={index}>
+                            <Link to={'posts/' + post.slug}>
+                                <h2 className='post-title'>{post.title}</h2>
+
+                            </Link>
+                            <h3 className='description'>{post.description}</h3>
+                            <Moment format="MMMM D, YYYY" className='createdAt'>{post.createdAt}</Moment>
+                        </div>
+                    })}
+                </div>}
             </div>
         </Layout>
     )

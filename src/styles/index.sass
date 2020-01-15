@@ -79,7 +79,7 @@
         justify-content: center
         flex-wrap: wrap
 
-.card 
+.card-grid 
     // Layout
     margin-top: 20px
     width: 100%
@@ -103,6 +103,25 @@
         font-weight: bold
         @extend .sm-text-3xl
         @extend .font-serif
-    .imageless 
-        // Typography
-        text-align: center !important
+
+
+.list-posts
+    // Layout
+    display: flex 
+    justify-content: space-around
+    flex-wrap: wrap 
+    @extend .container
+    .card-list 
+        @extend .card-grid
+
+        // Layout
+        max-width: 50%
+        min-width: 320px
+        @extend .container
+        .post-title, .createdAt, .description 
+            // Layout
+            margin-bottom: 5px
+        .description 
+            // Layout
+            max-width: 90%
+

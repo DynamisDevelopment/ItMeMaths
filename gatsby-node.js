@@ -1,11 +1,11 @@
 const path = require("path")
 
 module.exports.createPages = async ({ graphql, actions }) => {
-    const { createPage } = actions
+  const { createPage } = actions
 
-    // * Archives
-    const archiveTemplate = path.resolve('./src/templates/archive/Archive.js')
-    const archive = await graphql(`
+  // * Categories
+  const archiveTemplate = path.resolve('./src/templates/archive/Archive.js')
+  const archive = await graphql(`
         query {
             graphcms {
               categories {
@@ -15,17 +15,36 @@ module.exports.createPages = async ({ graphql, actions }) => {
           }
         `)
 
-    archive.data.graphcms.categories.forEach(edge => {
-        createPage({
-            component: archiveTemplate,
-            path: `/archive/${edge.slug}`,
-            context: { slug: edge.slug }
-        })
+  archive.data.graphcms.categories.forEach(edge => {
+    createPage({
+      component: archiveTemplate,
+      path: `/archive/${edge.slug}`,
+      context: { slug: edge.slug }
     })
+  })
 
-    // * Posts
-    const postTemplate = path.resolve('./src/templates/post/Post.js')
-    const posts = await graphql(`
+  // * SubCategories
+  const subCat = await graphql(`
+        query {
+            graphcms {
+              subCategories {
+                slug
+              }
+            }
+          }
+        `)
+
+  subCat.data.graphcms.subCategories.forEach(edge => {
+    createPage({
+      component: archiveTemplate,
+      path: `/archive/${edge.slug}`,
+      context: { slug: edge.slug }
+    })
+  })
+
+  // * Posts
+  const postTemplate = path.resolve('./src/templates/post/Post.js')
+  const posts = await graphql(`
         query {
             graphcms {
               posts {
@@ -35,12 +54,12 @@ module.exports.createPages = async ({ graphql, actions }) => {
           }
         `)
 
-    posts.data.graphcms.posts.forEach(edge => {
-        createPage({
-            component: postTemplate,
-            path: `/posts/${edge.slug}`,
-            context: { slug: edge.slug }
-        })
+  posts.data.graphcms.posts.forEach(edge => {
+    createPage({
+      component: postTemplate,
+      path: `/posts/${edge.slug}`,
+      context: { slug: edge.slug }
     })
+  })
 }
 

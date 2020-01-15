@@ -1,7 +1,7 @@
 @import "../../styles.sass"
 
 .post-banner
-    height: 90vh
+    height: 70vh
 
 .post-content 
     // Layout
@@ -20,7 +20,7 @@
 .banner-content-post
     // Layout
     width: 100vw
-    height: 90vh
+    height: 70vh
     position: absolute
     display: flex 
     justify-content: center
@@ -47,12 +47,13 @@
         p 
             margin-right: 5px
 
-.text-banner 
-    // Layout
-    height: 40vh 
 
-    // Typography
-    @extend .text-gray-800
-    h1 
-        // Typography
-        color: $main-color
+.banner-content-imgless-post
+    @extend .banner-content-post
+
+    // Layout
+    position: relative
+
+    // Misc Styling
+    color: #000
+

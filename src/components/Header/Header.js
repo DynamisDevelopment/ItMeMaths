@@ -11,10 +11,7 @@ const Header = ({ context }) => {
             <nav>
                 <Link to='/'><h1 className='siteName'>ItMeMaths</h1></Link>
                 <div className="spacer"></div>
-                <div className="searchBar">
-                    <img src="../assets/icons/search.svg" alt="Search Icon" className='search-icon' />
-                    <input type="text" placeholder="Search Articles" />
-                </div>
+
                 <div className='burger' onClick={() => toggle(true)}><img src="../assets/icons/burger.svg" alt="burger" /></div>
             </nav>
             <Navbar show={show} toggle={toggle} />
@@ -27,3 +24,8 @@ export default Header
 // <label> Change to {context.state ? 'light' : 'dark'}
 // <input type="checkbox" onClick={context.changeTheme} />
 // </label>
+
+// <div className="searchBar">
+// <img src="../assets/icons/search.svg" alt="Search Icon" className='search-icon' />
+// <input type="text" placeholder="Search Articles" />
+// </div>
