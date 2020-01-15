@@ -101,7 +101,7 @@ const SubCategory = ({ subject, key, showExtras, toggleExtras }) => {
             <animated.ul className="subCategories" style={subListSpring} onClick={() => postListShow ? togglePosts(false) : ''}>
                 {subject.subCategories.map((subCat, key) => {
                     return <div className="category subCat" key={key}>
-                        <img src="../assets/icons/left-arrow.svg" className="more" onClick={() => togglePosts(!postListShow)} />
+                        {subCat && <img src="../assets/icons/left-arrow.svg" className="more" onClick={() => togglePosts(!postListShow)} />}
                         <div className="veil"
                             style={{ visibility: !postListShow ? 'hidden' : 'visible' }}
                             onClick={() => togglePosts(false)}></div>

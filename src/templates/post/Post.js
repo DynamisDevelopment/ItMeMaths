@@ -8,6 +8,7 @@ import Layout from '../../components/layout'
 import Moment from 'react-moment'
 import { slide } from 'react-burger-menu'
 
+
 export const data = graphql`
     query($slug: String!) {
         slider: graphcms {
@@ -19,6 +20,7 @@ export const data = graphql`
                 likes
                 views
                 image: bannerImage {
+                    fileName
                     handle
                     width 
                     height

@@ -7,7 +7,6 @@ import '../styles/index.sass'
 
 // * Components 
 import Layout from '../components/layout'
-import Navbar from '../components/Navbar/Navbar'
 import GraphImg from "graphcms-image"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -23,6 +22,7 @@ const Home = () => {
                 description
                 slug 
                 image: bannerImage {
+                    fileName
                     handle
                     width 
                     height
@@ -36,6 +36,7 @@ const Home = () => {
                 slug 
                 createdAt
                 image: bannerImage {
+                    fileName
                     handle
                     width 
                     height
@@ -61,11 +62,13 @@ const Home = () => {
 
     const [gridView, toggleGrid] = useState(true)
 
+
     return (
         <Layout>
             <Slider {...settings} className='slider'>
                 {data.slider.posts.map((post, index) => {
                     return post.image && <div key={index} className='slide'>
+
                         <div className="banner-content-front">
                             <Link to={'posts/' + post.slug} className='title'>
                                 <h1>{post.title}</h1>
@@ -93,6 +96,7 @@ const Home = () => {
                                     withWebp={true}
                                     className='card-img'
                                     style={{ height: `${largeNum()}px` }} />}
+
                                 <h2 className='post-title'>{post.title}</h2>
                             </Link>
                             <h3 className='description'>{post.description}</h3>
@@ -107,6 +111,7 @@ const Home = () => {
                         return <div className='card-list' key={index}>
                             <Link to={'posts/' + post.slug}>
                                 <h2 className='post-title'>{post.title}</h2>
+
                             </Link>
                             <h3 className='description'>{post.description}</h3>
                             <Moment format="MMMM D, YYYY" className='createdAt'>{post.createdAt}</Moment>
@@ -118,3 +123,4 @@ const Home = () => {
     )
 }
 export default Home
+
